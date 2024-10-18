@@ -1,0 +1,28 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <!-- Base application theme. -->
+    <style name="Base.Theme.LR4_OMR" parent="Theme.Material3.DayNight.NoActionBar">
+
+        <item name="colorPrimary">#4CAF50</item>  <!-- Light green -->
+        <item name="colorPrimaryVariant">#388E3C</item> <!-- Darker green -->
+        <item name="colorOnPrimary">#FFFFFF</item> <!-- White -->
+        <item name="colorSecondary">#FFEB3B</item>  <!-- Amber -->
+        <item name="colorSecondaryVariant">#FDD835</item> <!-- Amber darker -->
+        <item name="colorOnSecondary">#000000</item> <!-- Black -->
+    </style>
+
+    <style name="Theme.LR4_OMR" parent="Base.Theme.LR4_OMR" />
+
+    <style name="Base.Theme.LR4_OMR.Dark" parent="Theme.Material3.DayNight.NoActionBar">
+        <item name="colorPrimary">#228B22</item>
+        <item name="colorPrimaryVariant">#006400</item>
+        <item name="colorOnPrimary">#FFFFFF</item>
+        <item name="colorSecondary">#90EE90</item> <!-- Light green -->
+        <item name="colorSecondaryVariant">#006400</item> <!-- Darker green -->
+        <item name="colorOnSecondary">#FFFFFF</item> <!-- White -->
+        <item name="android:textColorPrimary">#FFFFFF</item> <!-- White -->
+        <item name="android:textColorSecondary">#90EE90</item> <!-- Light green -->
+    </style>
+
+    <style name="Theme.LR4_OMR.Dark" parent="Base.Theme.LR4_OMR.Dark" />
+</resources>
+
