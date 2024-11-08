@@ -1,17 +1,19 @@
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    tools:context=".MainActivity"
+    xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:padding="16dp"
-    tools:context=".MainActivity">
+    android:background="#FFFFFF"
+    android:padding="16dp">
 
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/albumRecycler"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_above="@id/relativeLayoutInput" />
+        android:layout_above="@id/relativeLayoutInput"/>
 
     <com.google.android.material.appbar.AppBarLayout
         android:id="@+id/appBarLayout"
@@ -22,7 +24,9 @@
         <com.google.android.material.appbar.MaterialToolbar
             android:id="@+id/toolbar"
             android:layout_width="match_parent"
-            android:layout_height="?attr/actionBarSize">
+            android:layout_height="?attr/actionBarSize"
+            android:background="#266D29"
+            android:backgroundTint="#FFFFFF">
 
             <TextView
                 android:layout_width="wrap_content"
@@ -115,7 +119,7 @@
         android:layout_height="wrap_content"
         android:layout_below="@id/relativeLayoutInput"
         android:gravity="center"
-        android:orientation="horizontal" />
+        android:orientation="horizontal"/>
 
     <ListView
         android:id="@+id/listViewSongs"
@@ -124,6 +128,7 @@
         android:layout_below="@id/buttonContainer"
         android:layout_marginTop="16dp"
         android:background="#B8F6E8C5" />
+
 
 
 </RelativeLayout>

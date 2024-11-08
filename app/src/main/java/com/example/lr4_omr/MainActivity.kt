@@ -17,10 +17,10 @@ import android.view.MenuItem
 
 class MainActivity : AppCompatActivity() {
     private lateinit var binding: ActivityMainBinding
-    private val allSongs = mutableListOf<Song>()
-    private val favorites = mutableListOf<Song>()
-    private val albums = mutableListOf<Album>()
-    private val artists = mutableListOf<Artist>()
+    val allSongs = mutableListOf<Song>()
+    val favorites = mutableListOf<Song>()
+    val albums = mutableListOf<Album>()
+    val artists = mutableListOf<Artist>()
     private lateinit var songAdapter: SongAdapter
 
     override fun onCreate(savedInstanceState: Bundle?) {
