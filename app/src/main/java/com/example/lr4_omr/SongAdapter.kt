@@ -4,6 +4,8 @@ import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.example.lr4_omr.databinding.ListItemSongBinding
+import androidx.recyclerview.widget.ItemTouchHelper
+
 
 // Обновленный класс SongAdapter
 class SongAdapter(
@@ -38,6 +40,8 @@ class SongAdapter(
     override fun onBindViewHolder(holder: SongViewHolder, position: Int) {
         holder.bind(songs[position])
     }
+
+
 
     override fun getItemCount(): Int {
         return songs.size

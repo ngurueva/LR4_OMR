@@ -17,10 +17,11 @@ import android.view.MenuItem
 
 class MainActivity : AppCompatActivity() {
     private lateinit var binding: ActivityMainBinding
-    val allSongs = mutableListOf<Song>()
-    val favorites = mutableListOf<Song>()
-    val albums = mutableListOf<Album>()
-    val artists = mutableListOf<Artist>()
+    var allSongs = mutableListOf<Song>()
+    var favorites = mutableListOf<Song>()
+    var albums = mutableListOf<Album>()
+    var artists = mutableListOf<Artist>()
+    val ALL_SONGS_REQUEST_CODE = 100
     private lateinit var songAdapter: SongAdapter
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -134,6 +135,22 @@ class MainActivity : AppCompatActivity() {
         binding.editTextAlbum.setText("")
         binding.checkBoxFavorite.isChecked = false
     }
+
+    override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
+        super.onActivityResult(requestCode, resultCode, data)
+        if (requestCode == ALL_SONGS_REQUEST_CODE && resultCode == RESULT_OK) {
+            val bundle = data?.extras
+            allSongs = bundle?.getSerializable("allSongs") as? MutableList<Song> ?: mutableListOf()
+            albums = bundle?.getSerializable("albums") as? MutableList<Album> ?: mutableListOf()
+            artists = bundle?.getSerializable("artists") as? MutableList<Artist> ?: mutableListOf()
+            favorites = bundle?.getSerializable("favorites") as? MutableList<Song> ?: mutableListOf()
+
+            // Обновляем адаптер в `MainActivity`
+            songAdapter.updateSongs(allSongs)
+        }
+    }
+
+
 
     private inner class SongAdapter(context: AppCompatActivity, songs: List<Song>) :
         ArrayAdapter<Song>(context, 0, songs) {
